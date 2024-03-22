@@ -17,18 +17,18 @@
             <img src="resources/img/ringsce.png" alt="Logo">
         </div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="welcome.php">Home</a></li>
+            <li><a href="blog">Reader</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
         </ul>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <!--<a href="#"><i class="fab fa-facebook-f"></i></a>-->
+            <a href="https://twitter.com/ringsce"><i class="fab fa-twitter"></i></a>
+            <!--<a href="#"><i class="fab fa-instagram"></i></a>-->
+            <a href="https://www.linkedin.com/in/plvicente"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <a href="#" class="liberapay-link">Support us on Liberapay</a>
+        <a href="https://liberapay.com/plvicente" class="liberapay-link">Support us on Liberapay</a>
     </div>
     
     <!-- Slideshows -->
