@@ -2,7 +2,72 @@
 include_once("header.php");
 ?>
 <body>
-    <!-- Sliding Menu -->
+<div class="menu-container" id="menuContainer">
+    <div class="menu-content">
+        <h2>Social Icons</h2>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div><?php
+include_once("header.php"); // Assuming "header.php" contains necessary HTML code for the header
+?>
+
+<body>
+
+<div class="menu-container" id="menuContainer">
+    <div class="menu-content">
+        <h2>Social Icons</h2>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+    </div>
+</div>
+
+<div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+<!-- Sliding Menu -->
+<div class="container">
+    <h1>Sliding Menu with Social Icons, Slideshows, and Dark Mode/Light Mode Toggle</h1>
+    
+    <!-- Dark Mode/Light Mode Toggle -->
+    <label class="switch">
+        <input type="checkbox" id="toggle">
+        <span class="slider round"></span>
+    </label>
+    
+    <!-- Slideshows -->
+    <div class="slideshows">
+        <!-- Slideshow contents here -->
+    </div>
+</div>
+
+<!-- Dark Mode/Light Mode Toggle JavaScript -->
+<script>
+    const toggleSwitch = document.querySelector('#toggle');
+    const container = document.querySelector('.container');
+
+    toggleSwitch.addEventListener('change', function() {
+        if (this.checked) {
+            container.classList.add('dark-mode');
+        } else {
+            container.classList.remove('dark-mode');
+        }
+    });
+</script>
+
+</body>
+</html>
+
+    </div>
+</div>
+
+<div class="menu-toggle" id="menuToggle">&#9776;</div>
+<!-- Sliding Menu -->
     <div class="container">
         <h1>Sliding Menu with Social Icons, Slideshows, and Dark Mode/Light Mode Toggle</h1>
         <!-- Dark Mode/Light Mode Toggle -->
@@ -62,5 +127,6 @@ include_once("header.php");
             }
         });
     </script>
-</body>
-</html>
+<?php
+include_once("footer.php");
+?>
