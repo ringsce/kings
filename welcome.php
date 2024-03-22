@@ -22,14 +22,14 @@
 .search-form {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 100px; /* Adjusted to give space for the login icon */
     z-index: 999;
 }
 
 .login-icon {
     position: absolute;
-    top: 20px;b
-    right: 80px;
+    top: 20px;
+    right: 20px; /* Adjusted to position closer to the search form */
     cursor: pointer;
     color: #fff;
     font-size: 24px;
@@ -60,7 +60,8 @@
             <a href="https://www.linkedin.com/in/plvicente"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <a href="https://liberapay.com/plvicente" class="liberapay-link">Support us on Liberapay</a>
-        &copy; <?php echo date("Y"); ?>  Kreatyve Designs. All rights reserved.
+        <br/>
+        <!--<a>&copy; <?php echo date("Y"); ?>  Kreatyve Designs. All rights reserved.</a>-->
     </div>
     
     <!-- Slideshows -->
@@ -112,7 +113,7 @@
     </form>
 
     <!-- Login Icon -->
-    <!--<div class="login-icon" onclick="openLogin()">👤</div>-->
+    <div class="login-icon" onclick="openLogin()">👤</div>
 
 
     

@@ -1,8 +1,7 @@
 <?php
-/**
- * Loads the markdown file given in the ?page query param into $markdown.
- */
+include_once('header.php');
 require_once 'postRenderer.php';
+
 $postSlug = $_GET['page'];
 $page = __DIR__ . '/posts/' . $postSlug;
 
@@ -16,7 +15,7 @@ if (!$containsPathTraversal && file_exists($page)) {
 } else {
     header('HTTP/1.1 404 Not Found');
     $markdown = "# <center>404 😢<br/> Post not found<br/></center>";
-    $markdown.= '<center><a href="./">Back to all posts</a></center>';
+    $markdown .= '<center><a href="./">Back to all posts</a></center>';
     $pageTitle = 'Blog post not found!';
 }
 ?>
@@ -29,10 +28,14 @@ if (!$containsPathTraversal && file_exists($page)) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <?php include_once('header.php'); ?>
+
     <div class="blog">
         <div class='markdown'>
-                <?php echo renderMarkdown($markdown); ?>
+            <?php echo renderMarkdown($markdown); ?>
         </div>
     </div>
+
+    <?php include_once('./footer.php'); ?>
 </body>
 </html>
