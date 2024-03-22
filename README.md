@@ -2,7 +2,7 @@
 
 Welcome to the Kings and Lairs Reader Web App repository!
 
-![Kings and Lairs Logo](ringsce.png)
+![Screenshot](ringsce.png)
 
 ## About
 

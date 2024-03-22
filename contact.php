@@ -8,7 +8,6 @@
 <body>
     <h1>Contact Us</h1>
     <form method="POST" action="{{ route('contact.submit') }}">
-        @csrf
         <div>
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
