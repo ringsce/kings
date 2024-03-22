@@ -7,12 +7,43 @@
     <link rel="stylesheet" href="resources/css/styles.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+/* Additional Styles */
+.close-btn {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+.search-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.login-icon {
+    position: absolute;
+    top: 20px;b
+    right: 80px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    z-index: 999;
+}
+</style>
 </head>
+
 <body>
     <div class="menu-toggle" id="menuToggle">&#9776;</div>
     
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
         <div class="logo">
             <img src="resources/img/ringsce.png" alt="Logo">
         </div>
@@ -29,6 +60,7 @@
             <a href="https://www.linkedin.com/in/plvicente"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <a href="https://liberapay.com/plvicente" class="liberapay-link">Support us on Liberapay</a>
+        &copy; <?php echo date("Y"); ?>  Kreatyve Designs. All rights reserved.
     </div>
     
     <!-- Slideshows -->
@@ -73,6 +105,18 @@
         <span class="slider round"></span>
     </label>
 
+    <!-- Search Form -->
+    <form class="search-form" action="#" method="GET">
+        <input type="text" name="search" placeholder="Search">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Login Icon -->
+    <!--<div class="login-icon" onclick="openLogin()">👤</div>-->
+
+
+    
+
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
@@ -90,6 +134,15 @@
                 container.classList.remove('dark-mode');
             }
         });
+
+        function closeMenu() {
+            sidebar.classList.remove('active');
+        }
+
+        function openLogin() {
+            // Your login functionality here
+            alert("Login icon clicked. Implement login functionality here.");
+        }
     </script>
 </body>
 </html>
