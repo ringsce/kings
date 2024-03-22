@@ -1,123 +1,87 @@
-<?php
-include_once("header.php");
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnL Publishing</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
 <body>
-<div class="menu-container" id="menuContainer">
-    <div class="menu-content">
-        <h2>Social Icons</h2>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="resources/img/ringsce.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-        </div><?php
-include_once("header.php"); // Assuming "header.php" contains necessary HTML code for the header
-?>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <a href="#" class="liberapay-link">Support us on Liberapay</a>
+    </div>
+    
+    <!-- Slideshows -->
+    <div class="container">
+        <h1>Slideshow Gallery</h1>
+        <div class="slideshows">
+            <!-- Slideshow 1 -->
+            <div class="slideshow">
+                <h2>Slideshow 1</h2>
+                <!-- Slideshow content -->
+            </div>
 
-<body>
+            <!-- Slideshow 2 -->
+            <div class="slideshow">
+                <h2>Slideshow 2</h2>
+                <!-- Slideshow content -->
+            </div>
 
-<div class="menu-container" id="menuContainer">
-    <div class="menu-content">
-        <h2>Social Icons</h2>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <!-- Slideshow 3 -->
+            <div class="slideshow">
+                <h2>Slideshow 3</h2>
+                <!-- Slideshow content -->
+            </div>
+
+            <!-- Slideshow 4 -->
+            <div class="slideshow">
+                <h2>Slideshow 4</h2>
+                <!-- Slideshow content -->
+            </div>
+
+            <!-- Slideshow 5 -->
+            <div class="slideshow">
+                <h2>Slideshow 5</h2>
+                <!-- Slideshow content -->
+            </div>
         </div>
     </div>
-</div>
-
-<div class="menu-toggle" id="menuToggle">&#9776;</div>
-
-<!-- Sliding Menu -->
-<div class="container">
-    <h1>Sliding Menu with Social Icons, Slideshows, and Dark Mode/Light Mode Toggle</h1>
     
     <!-- Dark Mode/Light Mode Toggle -->
     <label class="switch">
         <input type="checkbox" id="toggle">
         <span class="slider round"></span>
     </label>
-    
-    <!-- Slideshows -->
-    <div class="slideshows">
-        <!-- Slideshow contents here -->
-    </div>
-</div>
 
-<!-- Dark Mode/Light Mode Toggle JavaScript -->
-<script>
-    const toggleSwitch = document.querySelector('#toggle');
-    const container = document.querySelector('.container');
-
-    toggleSwitch.addEventListener('change', function() {
-        if (this.checked) {
-            container.classList.add('dark-mode');
-        } else {
-            container.classList.remove('dark-mode');
-        }
-    });
-</script>
-
-</body>
-</html>
-
-    </div>
-</div>
-
-<div class="menu-toggle" id="menuToggle">&#9776;</div>
-<!-- Sliding Menu -->
-    <div class="container">
-        <h1>Sliding Menu with Social Icons, Slideshows, and Dark Mode/Light Mode Toggle</h1>
-        <!-- Dark Mode/Light Mode Toggle -->
-        <label class="switch">
-            <input type="checkbox" id="toggle">
-            <span class="slider round"></span>
-        </label>
-        <!-- Slideshows -->
-        <div class="slideshows">
-            <!-- Slideshow 1 -->
-            <div class="slideshow" id="slideshow1">
-                <h2>Slideshow 1</h2>
-                <!-- Slideshow content -->
-                <img src="slideshow1.jpg" alt="Slideshow 1 Image">
-            </div>
-
-            <!-- Slideshow 2 -->
-            <div class="slideshow" id="slideshow2">
-                <h2>Slideshow 2</h2>
-                <!-- Slideshow content -->
-                <img src="slideshow2.jpg" alt="Slideshow 2 Image">
-            </div>
-
-            <!-- Slideshow 3 -->
-            <div class="slideshow" id="slideshow3">
-                <h2>Slideshow 3</h2>
-                <!-- Slideshow content -->
-                <img src="slideshow3.jpg" alt="Slideshow 3 Image">
-            </div>
-
-            <!-- Slideshow 4 -->
-            <div class="slideshow" id="slideshow4">
-                <h2>Slideshow 4</h2>
-                <!-- Slideshow content -->
-                <img src="slideshow4.jpg" alt="Slideshow 4 Image">
-            </div>
-
-            <!-- Slideshow 5 -->
-            <div class="slideshow" id="slideshow5">
-                <h2>Slideshow 5</h2>
-                <!-- Slideshow content -->
-                <img src="slideshow5.jpg" alt="Slideshow 5 Image">
-            </div>
-        </div>
-    </div>
-
-    <!-- Dark Mode/Light Mode Toggle JavaScript -->
     <script>
-        const toggleSwitch = document.querySelector('#toggle');
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const toggleSwitch = document.getElementById('toggle');
         const container = document.querySelector('.container');
+
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
 
         toggleSwitch.addEventListener('change', function() {
             if (this.checked) {
@@ -127,6 +91,5 @@ include_once("header.php"); // Assuming "header.php" contains necessary HTML cod
             }
         });
     </script>
-<?php
-include_once("footer.php");
-?>
+</body>
+</html>

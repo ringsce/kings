@@ -3,174 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliding Menu with Social Icons and Slideshows</title>
-    <!-- Add your CSS styles here -->
-    <style>
-        /* Your CSS styles for sliding menu, social icons, and slideshows */
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #333;
-            padding-top: 20px;
-            color: #fff;
-            overflow-x: hidden;
-            transition: 0.5s;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar ul li {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .sidebar ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #555;
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .logo img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-        }
-
-        .social-icons {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .social-icons a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .social-icons a:hover {
-            color: #ccc;
-        }
-
-        .version {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            color: #fff;
-        }
-
-        .slideshows {
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .slideshow {
-            width: 300px;
-            height: 200px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <!-- Logo -->
         <div class="logo">
-            <img src="your-logo.png" alt="Logo">
+            <img src="logo.png" alt="Logo">
         </div>
-        <!-- Menu Items -->
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <!-- Social Icons -->
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
+        <a href="#" class="liberapay-link">Support us on Liberapay</a>
     </div>
-
+    
     <!-- Page Content -->
-    <div id="content">
-        <!-- Toggle Button -->
-        <button class="openbtn" onclick="toggleSidebar()">☰ Open Sidebar</button>
-
-        <!-- Slideshows -->
+    <div class="container">
+        <h1>Slideshow Gallery</h1>
         <div class="slideshows">
             <!-- Slideshow 1 -->
-            <div class="slideshow" id="slideshow1">
+            <div class="slideshow">
+                <h2>Slideshow 1</h2>
                 <!-- Slideshow content -->
             </div>
 
             <!-- Slideshow 2 -->
-            <div class="slideshow" id="slideshow2">
+            <div class="slideshow">
+                <h2>Slideshow 2</h2>
                 <!-- Slideshow content -->
             </div>
 
             <!-- Slideshow 3 -->
-            <div class="slideshow" id="slideshow3">
+            <div class="slideshow">
+                <h2>Slideshow 3</h2>
                 <!-- Slideshow content -->
             </div>
 
             <!-- Slideshow 4 -->
-            <div class="slideshow" id="slideshow4">
+            <div class="slideshow">
+                <h2>Slideshow 4</h2>
                 <!-- Slideshow content -->
             </div>
 
             <!-- Slideshow 5 -->
-            <div class="slideshow" id="slideshow5">
+            <div class="slideshow">
+                <h2>Slideshow 5</h2>
                 <!-- Slideshow content -->
             </div>
         </div>
     </div>
+    
+    <!-- Dark Mode/Light Mode Toggle -->
+    <label class="switch">
+        <input type="checkbox" id="toggle">
+        <span class="slider round"></span>
+    </label>
 
-    <!-- Version -->
-    <div class="version" id="version"></div>
-
-    <!-- JavaScript for sidebar and version -->
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const toggleSwitch = document.getElementById('toggle');
+        const container = document.querySelector('.container');
+
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                container.classList.add('dark-mode');
             } else {
-                sidebar.style.width = "250px";
+                container.classList.remove('dark-mode');
             }
-        }
-
-        // Function to update version based on datetime
-        function updateVersion() {
-            var date = new Date();
-            var versionElement = document.getElementById("version");
-            var version = "Version: " + date.toLocaleString();
-            versionElement.textContent = version;
-        }
-
-        // Call updateVersion every second to update the version
-        setInterval(updateVersion, 1000);
+        });
     </script>
-
-    <!-- Include Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
