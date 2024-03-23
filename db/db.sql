@@ -4,5 +4,9 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     email VARCHAR(100) NOT NULL,
     country VARCHAR(100),
-    city VARCHAR(100)
+    city VARCHAR(100),
+    filename VARCHAR(255) NOT NULL,
+    filepath VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL
 );
+

@@ -26,7 +26,7 @@
 
                 // Perform AJAX request to AWS Lambda or other serverless function endpoint
                 $.ajax({
-                    url: 'https://kings.local',
+                    url: 'https://kings.local/search',
                     type: 'POST', // Adjust HTTP method as needed
                     contentType: 'application/json',
                     data: JSON.stringify({ search: searchTerm }),

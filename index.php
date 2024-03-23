@@ -70,6 +70,12 @@
             font-size: 24px;
             cursor: pointer;
         }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -81,6 +87,9 @@
     
     <!-- Slideshows -->
     <?php include_once 'slideshow.php'; ?>
+
+    <!-- Posts -->
+    <!--php include_once ('posts.php'); ?-->
     
     <!-- Dark Mode/Light Mode Toggle -->
     <label class="switch">
@@ -89,10 +98,24 @@
     </label>
 
     <!-- Search Form -->
-    <form class="search-form" action="#" method="GET">
+    <!--<form class="search-form" action="#" method="GET">
         <input type="text" name="search" placeholder="Search">
         <button type="submit">Search</button>
+    </form>-->
+    <!-- Search Form -->
+    <form class="search-form" action="search.php" method="GET">
+        <input type="text" name="q" placeholder="Search">
+        <select name="category">
+            <option value="">All Categories</option>
+            <option value="new_news">New News</option>
+            <option value="ekron_realms">Ekron: Realms</option>
+            <option value="ekron_samurai_babel">Ekron: Samurai Babel</option>
+            <option value="ekron_wars">Ekron: Wars</option>
+            <option value="ekron_humans">Ekron: Humans</option>
+        </select>
+        <button type="submit">Search</button>
     </form>
+
 
     <!-- Login Icon -->
     <div class="login-icon" onclick="toggleDropdown()">👤</div>
@@ -131,16 +154,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        function toggleDropdown() {
-            var dropdownMenu = document.getElementById("dropdownMenu");
-            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-        }
-
-        function toggleDarkMode() {
-            var body = document.body;
-            body.classList.toggle("dark-mode");
-        }
-    </script>
+    
 </body>
 </html>
