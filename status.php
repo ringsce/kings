@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KnL Publishing</title>
+    <title>Server Status</title>
     <link rel="stylesheet" href="resources/css/styles.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -77,67 +77,55 @@
             color: #fff;
         }
     </style>
-</head>
 
+    <style>
+        .online { color: green; }
+        .offline { color: red; }
+    </style>
+</head>
 <body>
+    <h1>Server Status</h1>
     <div class="menu-toggle" id="menuToggle">&#9776;</div>
-    
-    <!-- Trending -->
-    <?php include_once 'trending.php'; ?>
-    
+
     <!-- Sidebar -->
     <?php include_once 'sidebar.php'; ?>
     
-    <!-- Slideshows -->
-    <?php include_once 'slideshow.php'; ?>
-
-    <!-- Posts -->
-    <!--php include_once ('posts.php'); ?-->
+   
     
-    <!-- Dark Mode/Light Mode Toggle -->
-    <label class="switch">
-        <input type="checkbox" id="toggle">
-        <span class="slider round"></span>
-    </label>
 
-    <!-- Search Form -->
-    <!--<form class="search-form" action="#" method="GET">
-        <input type="text" name="search" placeholder="Search">
-        <button type="submit">Search</button>
-    </form>-->
-    <!-- Search Form -->
-    <form class="search-form" action="search.php" method="GET">
-        <input type="text" name="q" placeholder="Search">
-        <select name="category">
-            <option value="">All Categories</option>
-            <option value="new_news">New News</option>
-            <option value="ekron_realms">Ekron: Realms</option>
-            <option value="ekron_samurai_babel">Ekron: Samurai Babel</option>
-            <option value="ekron_wars">Ekron: Wars</option>
-            <option value="ekron_humans">Ekron: Humans</option>
-        </select>
-        <button type="submit">Search</button>
-    </form>
+    <?php
+    // Function to check if a port is open
+    function checkPort($host, $port) {
+        $connection = @fsockopen($host, $port);
+        if (is_resource($connection)) {
+            fclose($connection);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Check Apache status
+    $apacheStatus = checkPort('localhost', 80) ? '<span class="online">Online</span>' : '<span class="offline">Offline</span>';
+
+    // Check MySQL status
+    $mysqlStatus = checkPort('localhost', 3306) ? '<span class="online">Online</span>' : '<span class="offline">Offline</span>';
+
+    // Check Gerrit status
+    $gerritStatus = checkPort('localhost', 8080) ? '<span class="online">Online</span>' : '<span class="offline">Offline</span>';
+
+    // Check website status (assuming it's hosted on localhost)
+    $websiteStatus = checkPort('localhost', 80) ? '<span class="online">Online</span>' : '<span class="offline">Offline</span>';
+    ?>
+
+    <p>Apache: <?php echo $apacheStatus; ?></p>
+    <p>MySQL: <?php echo $mysqlStatus; ?></p>
+    <p>Gerrit: <?php echo $gerritStatus; ?></p>
+    <p>Website: <?php echo $websiteStatus; ?></p>
 
 
-    <!-- Login Icon -->
-    <div class="login-icon" onclick="toggleDropdown()">👤</div>
-
-    <!-- Dropdown Menu -->
-    <div class="dropdown" id="dropdownMenu">
-        <a href="login.php">Login</a>
-        <a href="register.php">Register</a>
-        <a href="settings.php">Settings</a>
-        <a href="theming.php">Theming</a>
-    </div>
-
-    <!-- Dark Mode Toggle Button -->
-    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-        <i class="fas fa-moon"></i>
-    </div>
-
-    <!-- Footer -->
-    <footer>
+     <!-- Footer -->
+     <footer>
         <div class="footer-columns">
             <!-- Column 1: Logo -->
             <div class="footer-column">
@@ -161,6 +149,6 @@
     </footer>
 
     <script src="script.js"></script>
-    
+
 </body>
 </html>
