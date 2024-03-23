@@ -88,10 +88,10 @@
 
     <!-- Dropdown Menu -->
     <div class="dropdown" id="dropdownMenu">
-        <a href="#">Login</a>
-        <a href="#">Register</a>
-        <a href="#">Settings</a>
-        <a href="#">Theming</a>
+        <a href="login.php">Login</a>
+        <a href="register.php">Register</a>
+        <a href="settings.php">Settings</a>
+        <a href="theming.php">Theming</a>
     </div>
 
     <!-- Footer -->
