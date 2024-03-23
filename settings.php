@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Settings</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resources/css/styles.css">
     <style>
         /* Additional Styles */
         .sidebar {
@@ -106,10 +106,26 @@
         </div>
     </div>
 
-    <footer>
-        &copy; 2016 - <?php echo date("Y"); ?> Kreatyve Designs. All rights reserved.
-    </footer>
+     <!-- Footer -->
+     <footer>
+        <div class="footer-columns">
+            <!-- Column 1: Logo -->
+            <div class="footer-column">
+                <img src="resources/img/ringsce.png" alt="Logo" class="logo">
+            </div>
 
+            <!-- Column 2: Copyright -->
+            <div class="footer-column">
+                &copy; 2016 - <?php echo date("Y"); ?> Kreatyve Designs. All Rights Reserved.
+            </div>
+
+            <!-- Column 3: Social Media Icons -->
+            <div class="footer-column">
+                <!-- Add social media icons or any other content here -->
+            </div>
+        </div>
+    </footer>
+    
     <script>
         const sidebar = document.getElementById('sidebar');
 
