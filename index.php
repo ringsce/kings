@@ -96,6 +96,7 @@
 
     <!-- Posts -->
     <!--php include_once ('posts.php'); ?-->
+    <php include_once ('posts.php'); ?>
     
     <!-- Dark Mode/Light Mode Toggle -->
     <label class="switch">
