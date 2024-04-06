@@ -4,7 +4,7 @@
 $organization = "ringsce";
 
 // GitHub Personal Access Token
-$token = "your_personal_access_token";
+$token = "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";
 
 // Log file path
 $logFile = "github_projects.log";
