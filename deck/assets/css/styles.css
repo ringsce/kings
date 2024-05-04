@@ -12,6 +12,59 @@ body {
     color: #fff; /* Dark mode text color */
 }
 
+/* Layout Styles */
+.container {
+    display: flex;
+    flex-direction: column; /* Stacking elements vertically */
+    align-items: flex-start; /* Align to the left */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background */
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Align vertically */
+    gap: 10px; /* Space between elements */
+}
+
+/* Horizontal form styling */
+.horizontal-form {
+    display: flex;
+    align-items: center; /* Aligns elements vertically */
+    gap: 10px; /* Space between form elements */
+}
+
+input {
+    padding: 5px; /* Basic padding for input fields */
+}
+
+button {
+    padding: 5px 10px; /* Padding for submit buttons */
+}
+
+/* Tab Navigation */
+.tab-nav {
+    background-color: #f1f1f1; /* Light background for tabs */
+    padding: 10px; /* Padding around the tab container */
+    border-bottom: 2px solid #ccc; /* Border to separate tabs */
+    display: flex; /* Flex layout for tabs */
+    justify-content: flex-start; /* Align tabs to the start */
+    gap: 15px; /* Space between tabs */
+}
+
+.tab {
+    text-decoration: none; /* No underline on links */
+    padding: 10px 20px; /* Padding within the tab */
+    background-color: #e0e0e0; /* Tab background color */
+    color: #333; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.tab:hover {
+    background-color: #d1d1d1; /* Darker on hover */
+}
+
 /* Sidebar Styles */
 .sidebar {
     position: fixed;
@@ -19,43 +72,39 @@ body {
     left: -250px;
     width: 250px;
     height: 100%;
-    background-color: #333;
-    transition: all 0.3s ease;
+    background-color: #333; /* Sidebar background color */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
 .sidebar.active {
-    left: 0;
+    left: 0; /* Move sidebar into view */
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 20px;
+    list-style: none; /* No list bullets */
+    padding: 20px; /* Padding inside sidebar */
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space between list items */
 }
 
 /* Content Styles */
 .content {
-    margin-left: 250px;
-    padding: 20px;
+    margin-left: 250px; /* Compensate for sidebar */
+    padding: 20px; /* Padding for content area */
 }
 
-/* Theme Styles */
-.blue-white {
-    background-color: #f0f0ff;
-    color: #333;
+/* Other Styles */
+.logo {
+    text-align: center; /* Center-align logo */
+    margin-bottom: 20px;
 }
 
-.red-grey {
-    background-color: #f5f5f5;
-    color: #800000;
-}
-
-.brown-red {
-    background-color: #8B4513;
-    color: #FF0000;
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular logo */
 }
 
 /* Social Icons */
@@ -65,111 +114,35 @@ body {
 }
 
 .social-icons a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 20px;
+    color: #fff; /* Default text color */
+    text-decoration: none; /* No underline */
+    margin: 0 10px; /* Space between social icons */
+    font-size: 20px; /* Larger font size */
 }
 
 .social-icons a:hover {
-    color: #ccc;
-}
-
-/* Liberapay Link */
-.liberapay-link {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    color: #fff;
-    text-decoration: none;
+    color: #ccc; /* Change color on hover */
 }
 
 /* Slideshows */
 .slideshows {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Flex layout for slideshows */
+    justify-content: space-between; /* Space between slideshows */
 }
 
 .slideshow {
     width: 150px;
     height: 150px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: #f0f0f0; /* Light background */
+    border: 1px solid #ccc; /* Border */
     margin-bottom: 20px;
-    display: flex;
+    display: flex; /* Flex layout for centering content */
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Center-align content */
 }
 
-.slideshow h2 {
-    margin-bottom: 10px;
-}
-
-/* Dark Mode Toggle */
-.switch {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #2196F3;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-/* Logo */
-.logo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
+/* Dark Mode Sidebar */
 .dark-mode .sidebar {
     background-color: #111; /* Dark mode background color */
     color: #fff; /* Dark mode text color */

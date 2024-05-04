@@ -16,5 +16,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Add your CSS styles here -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Set the form to display all elements in a single row */
+        .horizontal-form {
+            display: flex;
+            align-items: center; /* Align items vertically in the center */
+            gap: 10px; /* Add some space between elements */
+        }
+
+        /* Ensure input fields are not too large in width */
+        .horizontal-form input {
+            width: 150px; /* You can adjust the width as needed */
+        }
+    </style>
     
 </head>
