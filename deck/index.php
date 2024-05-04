@@ -24,7 +24,7 @@ require ('../header.php');
         <label for="field5">Field 5:</label>
         <input type="text" id="field5" name="field5"><br><br>
 
-        <button type="submit">Export to PDF</button>
+        <button type="submit">Export</button>
     </form>
 </body>
 </html>
