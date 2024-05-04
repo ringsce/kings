@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<? 
+require ('../header.php');
+?>
 <head>
-    <title>Export to PDF</title>
+    <title>Deck Editor</title>
 </head>
 <body>
-    <h2>Enter Information to Export to PDF</h2>
+    <h2>Build your Deck</h2>
     <form action="export_pdf.php" method="post">
         <label for="field1">Field 1:</label>
         <input type="text" id="field1" name="field1"><br><br>
@@ -25,3 +28,6 @@
     </form>
 </body>
 </html>
+<?php
+require('../footer.php');
+?>
