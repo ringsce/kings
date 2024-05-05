@@ -6,7 +6,7 @@
         </div>
         <!-- Copyright notice -->
         <div class="footer-copyright">
-            &copy; <?php echo date("Y"); ?>  Kreatyve Designs. All rights reserved.
+            &copy; 2023 - <?php echo date("Y"); ?>  Kreatyve Designs. All rights reserved.
         </div>
         <!-- Three columns -->
         <div class="footer-columns">

@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/baguetteBox.min.css">
-
+    
     <!-- Add your CSS styles here -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    
     <style>
         /* Styling for the tab navigation */
 .tab-nav {
@@ -55,4 +56,5 @@
     gap: 10px; /* Space between form elements */
 }
 </style>
-   </head>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>

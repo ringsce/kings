@@ -11,11 +11,11 @@
     </ul>
     <div class="social-icons">
         <!--<a href="#"><i class="fab fa-facebook-f"></i></a>-->
-        <a href="https://twitter.com/ringsce"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
         <!--<a href="#"><i class="fab fa-instagram"></i></a>-->
-        <a href="https://www.linkedin.com/in/plvicente"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
-    <a href="https://liberapay.com/plvicente" class="liberapay-link">Support us on Liberapay</a>
+    <a href="#" class="liberapay-link">Support us on Liberapay</a>
     <br/>
     <!--<a>&copy; <?php echo date("Y"); ?>  Kreatyve Designs. All rights reserved.</a>-->
 </div>

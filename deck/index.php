@@ -50,6 +50,21 @@ require 'header.php';
         <!-- Submit button -->
         <button type="submit">Submit</button>
     </form>
+
+<div id="app">{{ message }}</div>
+
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    setup() {
+      const message = ref('Hello vue!')
+      return {
+        message
+      }
+    }
+  }).mount('#app')
+</script>
 <?php
 require 'footer.php';
 ?>
