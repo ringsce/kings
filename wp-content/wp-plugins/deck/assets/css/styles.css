@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Default background color */
+    color: #333; /* Default text color */
+}
+
+.dark-mode body {
+    background-color: #333; /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
+}
+
+/* Layout Styles */
+.container {
+    display: flex;
+    flex-direction: column; /* Stacking elements vertically */
+    align-items: flex-start; /* Align to the left */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background */
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Align vertically */
+    gap: 10px; /* Space between elements */
+}
+
+/* Horizontal form styling */
+.horizontal-form {
+    display: flex;
+    align-items: center; /* Aligns elements vertically */
+    gap: 10px; /* Space between form elements */
+}
+
+input {
+    padding: 5px; /* Basic padding for input fields */
+}
+
+button {
+    padding: 5px 10px; /* Padding for submit buttons */
+}
+
+/* Tab Navigation */
+.tab-nav {
+    background-color: #f1f1f1; /* Light background for tabs */
+    padding: 10px; /* Padding around the tab container */
+    border-bottom: 2px solid #ccc; /* Border to separate tabs */
+    display: flex; /* Flex layout for tabs */
+    justify-content: flex-start; /* Align tabs to the start */
+    gap: 15px; /* Space between tabs */
+}
+
+.tab {
+    text-decoration: none; /* No underline on links */
+    padding: 10px 20px; /* Padding within the tab */
+    background-color: #e0e0e0; /* Tab background color */
+    color: #333; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.tab:hover {
+    background-color: #d1d1d1; /* Darker on hover */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333; /* Sidebar background color */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.active {
+    left: 0; /* Move sidebar into view */
+}
+
+.sidebar ul {
+    list-style: none; /* No list bullets */
+    padding: 20px; /* Padding inside sidebar */
+}
+
+.sidebar ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Content Styles */
+.content {
+    margin-left: 250px; /* Compensate for sidebar */
+    padding: 20px; /* Padding for content area */
+}
+
+/* Other Styles */
+.logo {
+    text-align: center; /* Center-align logo */
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular logo */
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-icons a {
+    color: #fff; /* Default text color */
+    text-decoration: none; /* No underline */
+    margin: 0 10px; /* Space between social icons */
+    font-size: 20px; /* Larger font size */
+}
+
+.social-icons a:hover {
+    color: #ccc; /* Change color on hover */
+}
+
+/* Slideshows */
+.slideshows {
+    margin-top: 20px;
+    display: flex; /* Flex layout for slideshows */
+    justify-content: space-between; /* Space between slideshows */
+}
+
+.slideshow {
+    width: 150px;
+    height: 150px;
+    background-color: #f0f0f0; /* Light background */
+    border: 1px solid #ccc; /* Border */
+    margin-bottom: 20px;
+    display: flex; /* Flex layout for centering content */
+    justify-content: center;
+    align-items: center; /* Center-align content */
+}
+
+/* Dark Mode Sidebar */
+.dark-mode .sidebar {
+    background-color: #111; /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
+}
+
+.dark-mode .content {
+    background-color: #111; /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
+}
