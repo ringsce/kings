@@ -80,3 +80,47 @@ function check_docs_param() {
     }
 }
 add_action('template_redirect', 'check_docs_param');
+
+
+/**
+ * Shortcode to list files in a directory
+ */
+function directory_reader_shortcode($atts) {
+    // Default attributes
+    $atts = shortcode_atts(
+        array(
+            'path' => '/deck', // Default path to read
+        ),
+        $atts,
+        'directory_reader'
+    );
+
+    // Get absolute path on the server
+    $directory_path = realpath(WP_CONTENT_DIR . $atts['path']); // Ensure it's a valid path
+
+    if (!$directory_path || !is_dir($directory_path)) {
+        return 'Invalid directory path.';
+    }
+
+    // Get list of files in the directory
+    $files = scandir($directory_path);
+    if (!$files) {
+        return 'No files found in the directory.';
+    }
+
+    // Build a list of files to display
+    $output = '<ul>';
+    foreach ($files as $file) {
+        if ($file === '.' || $file === '..') {
+            continue; // Skip current and parent directory links
+        }
+
+        // Create a link to the file (assuming the directory is accessible via URL)
+        $file_url = content_url($atts['path'] . '/' . $file); // URL to access the file
+        $output .= '<li><a href="' . esc_url($file_url) . '" target="_blank">' . esc_html($file) . '</a></li>';
+    }
+    $output .= '</ul>';
+
+    return $output;
+}
+add_shortcode('directory_reader', 'directory_reader_shortcode');
