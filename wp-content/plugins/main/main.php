@@ -1,9 +1,16 @@
 <?php
-/**
-* Plugin Name: test-plugin
-* Plugin URI: https://www.your-site.com/
-* Description: Test.
-* Version: 0.1
-* Author: Pedro Dias Vicente
-* Author URI: https://ringscejs.gleentech.com/
-**/
+/*
+ * Plugin Name:       My Basics Plugin
+ * Plugin URI:        https://example.com/plugins/the-basics/
+ * Description:       Handle the basics with this plugin.
+ * Version:           0.0.1
+ * Requires at least: 5.2
+ * Requires PHP:      7.2
+ * Author:            Pedro Dias Vicente
+ * Author URI:        https://ringscejs.gleentech.com/
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI:        https://example.com/my-plugin/
+ * Text Domain:       main
+ * Domain Path:       /languages
+ * /
