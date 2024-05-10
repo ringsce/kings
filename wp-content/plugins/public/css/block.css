@@ -1,0 +1,10 @@
+/* Block editor styling */
+.wp-block-my-plugin-markdown-block {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Frontend styling */
+.wp-block-my-plugin-markdown-block {
+    margin: 10px 0;
+}
