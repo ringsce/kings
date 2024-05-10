@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin Name:       My Basics Plugin
- * Plugin URI:        https://example.com/plugins/the-basics/
- * Description:       Handle the basics with this plugin.
+ * Plugin Name:       ringsce
+ * Plugin URI:        https://ringscejs.gleentech.com/plugins/the-wisdom/
+ * Description:       Handles the deck builder as wp-plugin
  * Version:           0.0.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
@@ -10,7 +10,7 @@
  * Author URI:        https://ringscejs.gleentech.com/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://example.com/my-plugin/
+ * Update URI:         https://ringscejs.gleentech.com/plugins/the-wisdom/
  * Text Domain:       main
  * Domain Path:       /languages
  */
@@ -124,3 +124,30 @@ function directory_reader_shortcode($atts) {
     return $output;
 }
 add_shortcode('directory_reader', 'directory_reader_shortcode');
+
+
+/*
+vuejs part and initialization
+*/
+// Enqueue Vue.js and your custom JavaScript
+function enqueue_vuejs_scripts() {
+    // Enqueue Vue.js from a CDN
+    wp_enqueue_script('vuejs', 'https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js', [], '2.6.14', true);
+
+    // Enqueue your custom JavaScript for Vue components
+    wp_enqueue_script('my-vue-script', plugins_url('/assets/js/vue-script.js', __FILE__), ['vuejs'], '1.0.0', true);
+
+    // Pass WordPress data to the Vue component if needed
+    wp_localize_script('my-vue-script', 'MyPluginData', [
+        'ajax_url' => admin_url('admin-ajax.php'), // URL for AJAX calls if needed
+        'nonce' => wp_create_nonce('vuejs_nonce'), // Security nonce
+    ]);
+}
+add_action('wp_enqueue_scripts', 'enqueue_vuejs_scripts');
+
+// Shortcode to render a Vue component
+function vuejs_shortcode() {
+    // Output the div where Vue.js will mount the component
+    return '<div id="vue-component"></div>';
+}
+add_shortcode('vuejs_component', 'vuejs_shortcode');
