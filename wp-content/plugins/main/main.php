@@ -165,7 +165,7 @@ function markdown_block_assets() {
     // Block's CSS
     wp_enqueue_style(
         'markdown-block-style',
-        plugin_dir_url(__FILE__) . 'block.css',
+        plugin_dir_url(__FILE__) . 'public/css/block.css',
         [],
         filemtime(plugin_dir_path(__FILE__) . 'block.css')
     );
