@@ -1,0 +1,56 @@
+import session
+import database
+import web
+
+// Database connection
+let servername = "localhost"
+let username = "your_username"
+let password = "your_password"
+let dbname = "your_database"
+
+let conn = database.connect(servername, username, password, dbname)
+if !conn then
+    web.error("Connection failed: " + database.error())
+    exit()
+
+// Form submission handling
+if web.request_method() == "POST" then
+    let email = web.post("email")
+    let password = web.post("password")
+
+    // SQL to check if user exists
+    let sql = "SELECT * FROM users WHERE email = ?"
+    let result = database.query(conn, sql, [email])
+
+    if result and result.rows_count() > 0 then
+        let row = result.fetch_row()
+        if security.password_verify(password, row["password"]) then
+            // Password is correct, set session variables
+            session.set("user_id", row["id"])
+            session.set("username", row["username"])
+            // Redirect to dashboard or home page
+            web.redirect("dashboard.kyte")
+        else
+            let error = "Invalid password"
+        end
+    else
+        let error = "User not found"
+    end
+end
+
+// Close the database connection
+database.close(conn)
+
+// HTML Output
+web.html_header("Login")
+web.html("<h2>Login</h2>")
+web.html_form(method="post", action=web.current_url(), content=[
+    "Email: ", web.input("email", required=True), "<br><br>",
+    "Password: ", web.input("password", type="password", required=True), "<br><br>",
+    web.submit("Login")
+])
+
+if error then
+    web.html("<p style='color:red;'>" + error + "</p>")
+end
+web.html_footer()

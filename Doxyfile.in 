@@ -1,0 +1,23 @@
+# Doxygen configuration file for PHP documentation
+
+# Project settings
+PROJECT_NAME           = Kings"
+PROJECT_NUMBER         = "1.0"
+OUTPUT_DIRECTORY       = "docs"
+
+# Input settings
+INPUT                  = "my-awesome-plugin.php"
+FILE_PATTERNS          = "*.php"
+RECURSIVE              = NO
+
+# Output formats
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+
+# Documentation settings
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO

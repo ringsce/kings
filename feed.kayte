@@ -1,0 +1,91 @@
+doctype("html")
+html(lang="en") {
+    head {
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title("Markdown Feed Viewer")
+
+        // Styles
+        style("""
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+            }
+            .container {
+                max-width: 800px;
+                margin: 20px auto;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+            .feed-item {
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .feed-item:last-child {
+                border-bottom: none;
+            }
+            .feed-image {
+                max-width: 100%;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            .feed-markdown {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+        """)
+        script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js")
+    }
+    body {
+        div(class="container") {
+            h1("Markdown Feed Viewer")
+            div(class="feed") {
+                // Dynamically rendered Markdown feed
+            }
+        }
+
+        script("""
+            const feedData = [
+                {
+                    markdown: "# Welcome to the Markdown Feed\\nHere is an example post with an image.",
+                    image: "https://via.placeholder.com/800x400?text=Example+Image"
+                },
+                {
+                    markdown: "## Another Post\\nThis is another post with *italic* text, **bold** text, and a [link](https://example.com).",
+                    image: "https://via.placeholder.com/600x300?text=Second+Example+Image"
+                },
+                {
+                    markdown: "### No Image Post\\nThis post contains only markdown text.",
+                    image: null
+                }
+            ];
+
+            const feedContainer = document.querySelector('.feed');
+            feedData.forEach(item => {
+                const feedItem = document.createElement('div');
+                feedItem.className = 'feed-item';
+
+                // Render Markdown
+                const markdownContent = document.createElement('div');
+                markdownContent.className = 'feed-markdown';
+                markdownContent.innerHTML = marked(item.markdown);
+
+                // Render Image if available
+                if (item.image) {
+                    const image = document.createElement('img');
+                    image.src = item.image;
+                    image.className = 'feed-image';
+                    feedItem.appendChild(image);
+                }
+
+                feedItem.appendChild(markdownContent);
+                feedContainer.appendChild(feedItem);
+            });
+        """)
+    }
+}
